@@ -14,6 +14,7 @@ limitations under the License.
 ==============================================================================*/
 
 #include <math.h>
+#include <bits/stdc++.h>
 
 #include "tensorflow/lite/micro/all_ops_resolver.h"
 #include "tensorflow/lite/micro/examples/hello_world/hello_world_model_data.h"
@@ -69,6 +70,7 @@ TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
   TF_LITE_MICRO_EXPECT_EQ(1, input->dims->data[0]);
   TF_LITE_MICRO_EXPECT_EQ(1, input->dims->data[1]);
   // The input is an 8 bit integer value
+  std::cout << input->type << std:: endl; 
   TF_LITE_MICRO_EXPECT_EQ(kTfLiteInt8, input->type);
 
   // Get the input quantization parameters
